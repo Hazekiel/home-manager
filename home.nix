@@ -55,7 +55,7 @@
 
     };
   };
-  
+
   programs = {
     git = {
       enable = true;
@@ -64,7 +64,16 @@
         user.email = "239578063+Hazekiel@users.noreply.github.com";
       };
     };
+    
+    bash = {
+      enable = true;
+      initExtra = ''
+        export PATH=$PATH:${config.home.homeDirectory}/scripts
+        fastfetch
+      '';
+    };
   };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
