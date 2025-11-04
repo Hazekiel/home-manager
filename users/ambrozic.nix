@@ -45,6 +45,12 @@
     # '';
   };
 
+  home.shellAliases = {
+    rebuild = "git -C /etc/nixos pull; nh os switch";
+    rebuild_boot = "git -C /etc/nixos pull; nh os boot";
+    cleanup = "nh clean all --keep 3; nix store optimise -v";
+  };
+
   programs = {
     git = {
       enable = true;
@@ -53,7 +59,7 @@
         user.email = "239578063+Hazekiel@users.noreply.github.com";
       };
     };
-    
+
     bash = {
       enable = true;
       initExtra = ''
@@ -79,9 +85,9 @@
   #
   #  /etc/profiles/per-user/ambrozicquentin/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  #home.sessionVariables = {
+  # EDITOR = "emacs";
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

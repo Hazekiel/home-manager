@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-  imports = [ ./hyprland.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./hyprland.nix
+    ./nh.nix
+  ];
 
   services.xserver.xkb = {
     layout = "fr";
