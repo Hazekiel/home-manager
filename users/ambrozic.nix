@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./lf/lf.nix
-    ./stylix/stylix.nix
+    ./../home-modules/lf/lf.nix
+    ./../stylix/stylix.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "ambrozicquentin";
-  home.homeDirectory = "/home/ambrozicquentin";
+  home.username = "ambrozic";
+  home.homeDirectory = "/home/ambrozic";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -43,17 +43,6 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
-  nix = {
-    package = pkgs.nix;
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-
-    };
   };
 
   programs = {
