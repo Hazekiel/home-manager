@@ -5,7 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/default.nix
     ./../../stylix/stylix.nix
@@ -18,7 +19,7 @@
 
   boot.initrd.luks.devices."luks-a768d09a-d537-4876-83d5-826d1d449c5c".device =
     "/dev/disk/by-uuid/a768d09a-d537-4876-83d5-826d1d449c5c";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "sam"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   boot.initrd.systemd.enable = true;
   # Configure network proxy if necessary
@@ -46,17 +47,26 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ambrozic = {
     isNormalUser = true;
     description = "Ambrozic";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [ ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -65,6 +75,14 @@
     wget
   ];
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-ocl
+      intel-compute-runtime
+    ];
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

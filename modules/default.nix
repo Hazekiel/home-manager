@@ -15,7 +15,8 @@
     nixfmt
     vscode
     firefox
-
+    discord
+    keepassxc
   ];
 
 }

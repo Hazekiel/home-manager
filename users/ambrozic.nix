@@ -60,7 +60,7 @@
       };
     };
 
-    bash = {
+    zsh = {
       enable = true;
       initExtra = ''
         export PATH=$PATH:${config.home.homeDirectory}/scripts
