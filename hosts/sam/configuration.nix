@@ -15,7 +15,16 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices = {
+    cryptroot = {
+      device = "/dev/disk/by-partuuid/a768d09a-d537-4876-83d5-826d1d449c5c";
+      allowDiscards = true; # Used if primary device is a SSD
+      preLVM = true;
+    };
+  };
 
   boot.initrd.luks.devices."luks-a768d09a-d537-4876-83d5-826d1d449c5c".device =
     "/dev/disk/by-uuid/a768d09a-d537-4876-83d5-826d1d449c5c";
@@ -73,8 +82,11 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     tpm2-tss
     wget
+    sbctl
+    tpm2-tools
   ];
 
+  #intel graphics drivers
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [

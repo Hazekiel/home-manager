@@ -4,6 +4,7 @@
   imports = [
     ./../home-modules/lf/lf.nix
     ./../stylix/stylix.nix
+    ./../home-modules/hyprland/hyprland.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

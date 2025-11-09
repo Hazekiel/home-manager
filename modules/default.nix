@@ -17,6 +17,8 @@
     firefox
     discord
     keepassxc
+    obsidian
+    steam
   ];
-  
+
 }
