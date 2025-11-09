@@ -19,6 +19,7 @@
     keepassxc
     obsidian
     steam
+    brightnessctl
   ];
 
 }
