@@ -20,6 +20,7 @@
     obsidian
     steam
     brightnessctl
+  
   ];
-
+virtualisation.vmware.host.enable = true;
 }

@@ -170,12 +170,12 @@
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloat,"
+        "$mainMod, V, togglefloating,"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefo"
+        "$mainMod, down, movefocus , d"
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, code:10, workspace, 1"
         "$mainMod, code:11, workspace, 2"
@@ -229,8 +229,8 @@
         "$mainMod, Super_L, exec, pkill rofi || $menu"
 
       ];
-      gestures = [
-        "3, horizontal,workspace"
+      gesture = [
+        "3, horizontal, workspace"
       ];
 
       ##############################
