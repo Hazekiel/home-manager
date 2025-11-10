@@ -10,7 +10,21 @@
   services.hyprpaper.enable = true;
   programs.hyprpanel = {
     enable = true;
+    settings = {
+      theme.bar = {
+        transparent = true;
+        buttons = {
+          background_hover_opacity = 70;
+          workspaces.enableBorder = false;
+          dashboard.enableBorder = false;
+          enableBorders = true;
+          borderSize = "0.08em";
+        };
+        outer_spacing = "0.4em";
+        launcher.autoDetectIcon = true;
 
+      };
+    };
   };
   programs.kitty.enable = true;
 
@@ -79,7 +93,7 @@
         rounding_power = 2;
 
         # Change transparency of focused and unfocused windows
-        active_opacity = 0.9;
+        active_opacity = 1;
         inactive_opacity = 0.6;
 
         shadow = {
@@ -204,6 +218,9 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        #hyprlock
+        "$mainMod, l, exec, hyprlock"
 
       ];
       bindm = [

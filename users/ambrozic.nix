@@ -5,6 +5,7 @@
     ./../home-modules/lf/lf.nix
     ./../stylix/stylix.nix
     ./../home-modules/hyprland/hyprland.nix
+    ./../home-modules/hyprland/hyprlock.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -62,7 +63,7 @@
 
     zsh = {
       enable = true;
-      initExtra = ''
+      initContent = ''
         export PATH=$PATH:${config.home.homeDirectory}/scripts
         fastfetch
       '';
