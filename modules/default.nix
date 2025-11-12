@@ -20,6 +20,8 @@
     obsidian
     steam
     brightnessctl
+    spotify
+    flameshot
   ];
 virtualisation.vmware.host.enable = true;
 }
