@@ -21,7 +21,8 @@
     steam
     brightnessctl
     spotify
-    flameshot
+    hyprshot
+    gparted
   ];
 virtualisation.vmware.host.enable = true;
 }

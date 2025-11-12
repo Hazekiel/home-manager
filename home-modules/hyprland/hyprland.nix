@@ -180,6 +180,7 @@
       ### KEYBINDINGS ###
       ###################
       "$mainMod" = "SUPER";
+      
       bind = [
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
@@ -243,9 +244,9 @@
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
       ];
       bindl = [
-        "$mainMod, KP_9, exec, playerctl next"
-        "$mainMod, KP_8, exec, playerctl play-pause"
-        "$mainMod, KP_7, exec, playerctl previous"
+        "$mainMod + CTRL, KP_9, exec, playerctl next"
+        "$mainMod + CTRL, KP_8, exec, playerctl play-pause"
+        "$mainMod + CTRL, KP_7, exec, playerctl previous"
       ];
       bindr = [
         "$mainMod, Super_L, exec, pkill rofi || $menu"
