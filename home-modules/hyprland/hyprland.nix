@@ -21,8 +21,9 @@
           borderSize = "0.08em";
         };
         outer_spacing = "0.4em";
+      };
+      bar = {
         launcher.autoDetectIcon = true;
-
       };
     };
   };
@@ -48,8 +49,8 @@
         #beau
         "hyprpanel & hyprpaper &"
         #applications
-        "[workspace special:keepass] keepassxc"
-        "[workspace 1] firefox"
+        "[workspace special:keepass silent] keepassxc"
+        "[workspace 1 ] firefox"
         "[workspace 2] code"
 
       ];
@@ -185,6 +186,8 @@
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
+        #Fullscreen
+        "$mainMod, F, fullscreen, 1"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
@@ -214,7 +217,9 @@
         "$mainMod SHIFT, code:19, movetoworkspace, 10"
         # Example special workspace (scratchpad)
         "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special"
+        "$mainMod, D, togglespecialworkspace, keepass"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod SHIFT, D, movetoworkspace, special:keepass"
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
