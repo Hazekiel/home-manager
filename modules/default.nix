@@ -18,11 +18,15 @@
     discord
     keepassxc
     obsidian
-    steam
     brightnessctl
     spotify
     hyprshot
     gparted
+    borgbackup
+    exegol
   ];
 virtualisation.vmware.host.enable = true;
+virtualisation.docker.enable = true;
+systemd.services.NetworkManager-wait-online.enable = false;
+programs.steam.enable = true;
 }

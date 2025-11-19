@@ -10,21 +10,36 @@
 
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs: {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
+    {
 
-    homeConfigurations.ambrozic = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config = { allowUnfree = true; };
+      homeConfigurations.ambrozic = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config = {
+            allowUnfree = true;
+          };
+        };
+        modules = [
+          inputs.stylix.homeModules.stylix
+          ./users/ambrozic.nix
+          {hmIsModule = false;}
+        ];
       };
-      modules = [ inputs.stylix.homeModules.stylix ./users/ambrozic.nix ];
-    };
 
-    nixosConfigurations.sam = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules =
-        [ ./hosts/sam/configuration.nix inputs.stylix.nixosModules.stylix ];
+      nixosConfigurations.sam = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/sam/configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
     };
-  };
 }

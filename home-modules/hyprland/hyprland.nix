@@ -28,6 +28,11 @@
     };
   };
   programs.kitty.enable = true;
+  home.sessionVariables = {
+    XDG_PICTURES_DIR = "${config.home.homeDirectory}/Pictures";
+    XDG_DOWNLOADS_DIR = "${config.home.homeDirectory}/Downloads";
+    XDG_DOCUMENTS_DIR = "${config.home.homeDirectory}/Documents";
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -180,7 +185,7 @@
       ### KEYBINDINGS ###
       ###################
       "$mainMod" = "SUPER";
-      
+
       bind = [
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
@@ -228,6 +233,9 @@
         #hyprlock
         "$mainMod, l, exec, hyprlock"
 
+        #hyprshot
+        " , PRINT ,exec ,${pkgs.hyprshot}/bin/hyprshot -m region"
+
       ];
       bindm = [
         # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -244,9 +252,9 @@
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
       ];
       bindl = [
-        "$mainMod + CTRL, KP_9, exec, playerctl next"
-        "$mainMod + CTRL, KP_8, exec, playerctl play-pause"
-        "$mainMod + CTRL, KP_7, exec, playerctl previous"
+        "$mainMod + CTRL, KP_9, exec, ${pkgs.playerctl}/bin/playerctl next"
+        "$mainMod + CTRL, KP_8, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+        "$mainMod + CTRL, KP_7, exec, ${pkgs.playerctl}/bin/playerctl previous"
       ];
       bindr = [
         "$mainMod, Super_L, exec, pkill rofi || $menu"

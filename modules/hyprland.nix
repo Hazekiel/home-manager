@@ -6,6 +6,8 @@
     rofi
     xarchiver
     blueman
+    libsecret
+    hyprpolkitagent
   ];
   programs.hyprland.enable = true;
   xdg.portal = {
@@ -19,7 +21,10 @@
       thunar-volman
     ];
   };
-  services.greetd = {
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+    services.greetd = {
     enable = true;
     settings.default_session = {
       command = "${pkgs.tuigreet}/bin/tuigreet --time -r --asterisks --user-menu --cmd Hyprland";

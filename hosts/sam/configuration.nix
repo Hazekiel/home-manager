@@ -25,6 +25,7 @@
       preLVM = true;
     };
   };
+  zramSwap.enable = true;
 
   boot.initrd.luks.devices."luks-a768d09a-d537-4876-83d5-826d1d449c5c".device =
     "/dev/disk/by-uuid/a768d09a-d537-4876-83d5-826d1d449c5c";
