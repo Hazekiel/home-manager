@@ -33,6 +33,7 @@
     XDG_DOWNLOADS_DIR = "${config.home.homeDirectory}/Downloads";
     XDG_DOCUMENTS_DIR = "${config.home.homeDirectory}/Documents";
   };
+  programs.rofi.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -229,7 +230,8 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-
+        # alternative term
+        "$mainMod, W, exec, cool-retro-term"  
         #hyprlock
         "$mainMod, l, exec, hyprlock"
 

@@ -66,6 +66,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
@@ -95,6 +96,11 @@
       intel-ocl
       intel-compute-runtime
     ];
+  };
+#power off puts to sleep
+  services.logind.settings.Login = {
+    HandlePowerKey= "suspend";
+    HandlePowerKeyLongPress= "poweroff";
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -3,7 +3,7 @@
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = ".backup";
+    backupFileExtension = "backup";
     users = { ambrozic = import ./../users/ambrozic.nix; };
   };
 

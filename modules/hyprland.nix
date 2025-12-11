@@ -3,11 +3,11 @@
   environment.systemPackages = with pkgs; [
     kitty
     hyprpaper
-    rofi
     xarchiver
     blueman
     libsecret
     hyprpolkitagent
+    rofi
   ];
   programs.hyprland.enable = true;
   xdg.portal = {

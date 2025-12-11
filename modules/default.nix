@@ -24,6 +24,11 @@
     gparted
     borgbackup
     exegol
+    burpsuite
+    cool-retro-term
+    btop
+    gimp
+    unzip 
   ];
 virtualisation.vmware.host.enable = true;
 virtualisation.docker.enable = true;
