@@ -28,7 +28,11 @@
     cool-retro-term
     btop
     gimp
-    unzip 
+    unzip
+    lunar-client
+  ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.lilex
   ];
 virtualisation.vmware.host.enable = true;
 virtualisation.docker.enable = true;

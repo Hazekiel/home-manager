@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = ./wallpaper.jpg;
+    image = ./SBR_jojo.jpeg;
     polarity = "dark";
     icons = {
       enable = true;
@@ -11,20 +11,20 @@
       dark = "breeze-dark";
     };
     opacity = {
-      terminal = 0.1;
+      terminal = 0.95;
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.fira-code;
-        name = "FiraCode Nerd Font Mono";
+        package = pkgs.nerd-fonts.lilex;
+        name = "Lilex Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans ";
+        package = pkgs.nerd-fonts.lilex;
+        name = "Lilex Nerd Font";
       };
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif ";
+        package = pkgs.nerd-fonts.lilex;
+        name = "Lilex Nerd Font";
       };
 
     };

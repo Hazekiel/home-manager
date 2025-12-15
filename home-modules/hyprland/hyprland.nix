@@ -83,7 +83,7 @@
       ##################################
       general = {
         gaps_in = 1;
-        gaps_out = 10;
+        gaps_out = 5;
 
         border_size = 2;
 
@@ -101,7 +101,7 @@
 
         # Change transparency of focused and unfocused windows
         active_opacity = 1;
-        inactive_opacity = 0.6;
+        inactive_opacity = 0.95;
 
         shadow = {
           enabled = false;
@@ -270,8 +270,6 @@
       ### WINDOWS AND WORKSPACES ###
       ##############################
       windowrule = [
-        "bordersize 0, floating:0, onworkspace:w[tv1]"
-        "rounding 0, floating:0, onworkspace:w[tv1]"
         "bordersize 0, floating:0, onworkspace:f[1]"
         "rounding 0, floating:0, onworkspace:f[1]"
 
@@ -281,8 +279,8 @@
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
       workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
+        "w[tv1], gapsout:5"
+        "f[1], gapsout:0"
       ];
     };
   };
