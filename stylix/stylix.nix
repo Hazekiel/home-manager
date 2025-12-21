@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = ./SBR_jojo.jpeg;
+    image = ./SBR_horse.jpg;
     polarity = "dark";
     icons = {
       enable = true;
