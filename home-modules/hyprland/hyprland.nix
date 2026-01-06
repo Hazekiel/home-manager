@@ -53,7 +53,7 @@
       #################
       exec-once = [
         #beau
-        "hyprpanel & hyprpaper &"
+        "hyprpanel & hyprpaper &" 
         #applications
         "[workspace special:keepass silent] keepassxc"
         "[workspace 1 ] firefox"
@@ -270,13 +270,13 @@
       ### WINDOWS AND WORKSPACES ###
       ##############################
       windowrule = [
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
+        
+        "match:fullscreen true, match:float false,  border_size 0, rounding 0"
 
         # Ignore maximize requests from apps. You'll probably like this.
-        "suppressevent maximize, class:.*"
+        "suppress_event maximize, match:class .*"
         # Fix some dragging issues with XWayland
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "match:focus false,match:class ^$,match:title ^$,match:xwayland 1,match:float 1,fullscreen 0,pin 0"
       ];
       workspace = [
         "w[tv1], gapsout:5"
