@@ -33,6 +33,7 @@
     prismlauncher
     pkgs.python315
     hashcat
+    libreoffice-qt-fresh
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.lilex

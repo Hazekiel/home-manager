@@ -65,7 +65,7 @@
       #############################
 
       env = [
-        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,15"
         "GDK_SCALE,0.5"
         "XCURSOR_SIZE,16"
       ];
