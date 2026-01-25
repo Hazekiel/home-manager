@@ -12,6 +12,7 @@
     ./../home-modules/hyprland/hyprland.nix
     ./../home-modules/hyprland/hyprlock.nix
     ./../home-modules/scripts/backup-borg-script.nix
+    ./../home-modules/vesktop.nix
   ];
   options = {
     hmIsModule= lib.mkOption{
