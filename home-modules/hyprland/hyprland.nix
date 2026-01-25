@@ -55,7 +55,6 @@
         #beau
         "hyprpanel & hyprpaper &" 
         #applications
-        "[workspace special:keepass silent] keepassxc"
         "[workspace 1 ] firefox"
         "[workspace 2] code"
 
