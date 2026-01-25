@@ -11,6 +11,7 @@
     ./../../modules/default.nix
     ./../../stylix/stylix.nix
     ./../../modules/home-manager.nix
+    ./../../modules/laptop.nix
   ];
 
   # Bootloader.
