@@ -15,27 +15,28 @@
 
   environment.systemPackages = with pkgs; [
     nixfmt
-    vscode
-    firefox
-    discord
-    keepassxc
-    obsidian
     brightnessctl
-    spotify
-    hyprshot
+    unzip
+    unrar
+    btop
     gparted
     borgbackup
     #exegol
-    burpsuite
-    cool-retro-term
-    btop
-    gimp
-    unzip
-    lunar-client
-    prismlauncher
     pkgs.python315
     hashcat
+    burpsuite
     libreoffice-qt-fresh
+    hyprshot
+    firefox
+    vscode
+    discord
+    keepassxc
+    obsidian
+    spotify
+    gimp
+    lunar-client
+    prismlauncher
+    ryubing
   ];
 
   fonts.packages = with pkgs; [
