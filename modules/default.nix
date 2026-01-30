@@ -36,7 +36,6 @@
     gimp
     lunar-client
     prismlauncher
-    ryubing
   ];
 
   fonts.packages = with pkgs; [
