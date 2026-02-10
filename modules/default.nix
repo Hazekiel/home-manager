@@ -18,6 +18,7 @@
     brightnessctl
     unzip
     unrar
+    p7zip
     btop
     gparted
     borgbackup
@@ -41,7 +42,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.lilex
   ];
-  #virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
   programs.steam.enable = true;
