@@ -4,6 +4,8 @@
     enable = true;
     image = ./SBR_horse.jpg;
     polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/hardhacker.yaml";
+
     icons = {
       enable = true;
       package = pkgs.kdePackages.breeze-icons;
@@ -26,7 +28,6 @@
         package = pkgs.nerd-fonts.lilex;
         name = "Lilex Nerd Font";
       };
-
     };
   };
 }
