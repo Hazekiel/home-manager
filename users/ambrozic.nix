@@ -15,11 +15,10 @@
     ./../home-modules/vesktop.nix
   ];
   options = {
-    hmIsModule= lib.mkOption{
+    hmIsModule = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "pour savoir si home manager est un module";
-
 
     };
   };
@@ -29,7 +28,7 @@
     home.username = "ambrozic";
     home.homeDirectory = "/home/ambrozic";
 
-    nixpkgs.config = lib.mkIf (!config.hmIsModule) {allowUnfree = true;};
+    nixpkgs.config = lib.mkIf (!config.hmIsModule) { allowUnfree = true; };
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
     # introduces backwards incompatible changes.
@@ -74,6 +73,11 @@
         settings = {
           user.name = "Hazekiel";
           user.email = "239578063+Hazekiel@users.noreply.github.com";
+          pull = {
+            rebase = true;
+            autostash = true;
+          };
+          rebase.autostash = true;
         };
       };
 
