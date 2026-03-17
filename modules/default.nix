@@ -26,7 +26,6 @@
     gparted
     borgbackup
     #exegol
-    pkgs.python315
     hashcat
     burpsuite
     libreoffice-qt-fresh
